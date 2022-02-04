@@ -25,11 +25,16 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ADDED BY USER
+# add coloring to ls
 alias ls='ls --color --group-directories-first $@'
 
+# home, end, and delete keys
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
+
+# menu-driven completion
+zstyle ':completion:*' menu yes select
 
 # PUT AT END
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
