@@ -34,7 +34,8 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 # menu-driven completion
-zstyle ':completion:*' menu yes select
+# zstyle ':completion:*' menu yes select
+zstyle ':completion:*' menu select
 
 # PUT AT END
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
