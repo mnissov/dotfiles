@@ -14,16 +14,16 @@ unsetopt autocd extendedglob
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/morten/.zshrc'
+zstyle :compinstall filename "/home/morten/.zshrc"
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-if lsb_release -is | grep -qi 'Endeavouros' ; then
+if lsb_release -is | grep -qi "Endeavouros" ; then
 	source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
-if lsb_release -is | grep -qi 'Ubuntu' ; then
+if lsb_release -is | grep -qi "Ubuntu" ; then
 	source ~/powerlevel10k/powerlevel10k.zsh-theme
 fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -46,7 +46,7 @@ zstyle ":completion:*" menu select
 
 ## BINDKEYS
 # allow shift tabbing
-bindkey '^[[Z' reverse-menu-complete
+bindkey "^[[Z" reverse-menu-complete
 # home, end, and delete keys
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
@@ -54,12 +54,12 @@ bindkey "^[[3~" delete-char
 
 ## ALIASES
 # add coloring to ls
-alias ls='ls --color=always --group-directories-first $@'
+alias ls="ls --color=always --group-directories-first $@"
 
 # PUT AT END
-if lsb_release -is | grep -qi 'Endeavouros' ; then
+if lsb_release -is | grep -qi "Endeavouros" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-if lsb_release -is | grep -qi 'Ubuntu' ; then
+if lsb_release -is | grep -qi "Ubuntu" ; then
 	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
