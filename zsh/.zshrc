@@ -20,22 +20,46 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+if lsb_release -is | grep -qi 'Endeavouros' ; then
+	source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
+if lsb_release -is | grep -qi 'Ubuntu' ; then
+	source ~/powerlevel10k/powerlevel10k.zsh-theme
+fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ADDED BY USER
-# add coloring to ls
-alias ls='ls --color --group-directories-first $@'
+# apply spell correction on commands
+setopt correctall
 
+# autoload completion
+# -U ignore alises
+# +X only load named function
+autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
+
+# Do menu-driven completion
+# menu select: enter select but does not execute command
+zstyle ":completion:*" menu select
+# `rehash true` sucks
+
+## BINDKEYS
+# allow shift tabbing
+bindkey '^[[Z' reverse-menu-complete
 # home, end, and delete keys
 bindkey "^[[H" beginning-of-line
 bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
-# menu-driven completion
-# zstyle ':completion:*' menu yes select
-zstyle ':completion:*' menu select
+## ALIASES
+# add coloring to ls
+alias ls='ls --color=always --group-directories-first $@'
 
 # PUT AT END
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if lsb_release -is | grep -qi 'Endeavouros' ; then
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if lsb_release -is | grep -qi 'Ubuntu' ; then
+	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
