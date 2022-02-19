@@ -20,7 +20,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-if lsb_release -is | grep -qi "Endeavouros" ; then
+if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 fi
 if lsb_release -is | grep -qi "Ubuntu" ; then
@@ -57,7 +57,7 @@ bindkey "^[[3~" delete-char
 alias ls="ls --color=always --group-directories-first $@"
 
 # PUT AT END
-if lsb_release -is | grep -qi "Endeavouros" ; then
+if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 if lsb_release -is | grep -qi "Ubuntu" ; then
