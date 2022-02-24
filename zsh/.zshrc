@@ -9,6 +9,7 @@ fi
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
+setopt histignoredups
 setopt beep nomatch notify
 unsetopt autocd extendedglob
 bindkey -e
@@ -55,6 +56,9 @@ bindkey "^[[3~" delete-char
 ## ALIASES
 # add coloring to ls
 alias ls="ls --color=always --group-directories-first $@"
+
+# setting i3blocks config file location for i3
+
 
 # PUT AT END
 if lsb_release -is | grep -qi "EndeavourOS" ; then
