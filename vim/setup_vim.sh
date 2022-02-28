@@ -1,4 +1,4 @@
 #!/bin/sh
-ln -s ~/repos/dotfiles/vim/.vimrc ~/
-mkdir -p ~/.vim
-ln -s ~/repos/dotfiles/vim/molokai/colors ~/.vim/
+ln -sfn ~/repos/dotfiles/vim/.vimrc ~/
+mkdir -p ~/.vim/colors
+ln -sfn ~/repos/dotfiles/vim/molokai/colors/molokai.vim ~/.vim/colors/
