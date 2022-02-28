@@ -1,3 +1,3 @@
 #!/bin/sh
-ln -s ~/repos/dotfiles/zsh/.zshrc ~/
-ln -s ~/repos/dotfiles/zsh/.p10k.zsh ~/
+ln -sfn ~/repos/dotfiles/zsh/.zshrc ~/
+ln -sfn ~/repos/dotfiles/zsh/.p10k.zsh ~/
