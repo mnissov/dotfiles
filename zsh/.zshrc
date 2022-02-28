@@ -57,7 +57,6 @@ bindkey "^[[3~" delete-char
 # add coloring to ls
 alias ls="ls --color=always --group-directories-first $@"
 
-
 # PUT AT END
 if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
