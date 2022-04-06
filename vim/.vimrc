@@ -8,4 +8,4 @@ set tabstop=4
 set ls=2
 " syntax highlighting
 syntax on
-colorscheme molokai
+colorscheme monokai_pro 
