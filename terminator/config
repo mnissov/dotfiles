@@ -1,0 +1,23 @@
+[global_config]
+  focus = mouse
+  inactive_color_offset = 1.0
+  always_split_with_profile = True
+  title_use_system_font = False
+  title_font = MesloLGS NF 9
+[keybindings]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+    font = MesloLGS NF 12
+    show_titlebar = False
+    use_system_font = False
+    use_theme_colors = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]
