@@ -7,3 +7,6 @@
 [submodule "vim/vim-monokai-pro"]
 	path = vim/vim-monokai-pro
 	url = git@github.com:phanviet/vim-monokai-pro.git
+[submodule "vim/sonokai"]
+	path = vim/sonokai
+	url = https://github.com/sainnhe/sonokai

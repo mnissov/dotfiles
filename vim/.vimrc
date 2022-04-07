@@ -11,4 +11,11 @@ set ignorecase
 set smartcase
 " syntax highlighting
 syntax on
-colorscheme monokai_pro 
+
+" color theme, monokai inspired
+if has('termguicolors')
+	set termguicolors
+endif
+let g:sonokai_style = 'shusia'
+let g:sonokai_better_performance = 1
+colorscheme sonokai
