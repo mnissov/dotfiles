@@ -5,6 +5,7 @@ fi
 if lsb_release -is | egrep -qi "Ubuntu|Pop" ; then
 	sudo apt-get install terminator
 fi
+
 echo "Setting config"
 mkdir -p ~/.config/terminator
 ln -sfn ~/repos/dotfiles/terminator/config ~/.config/terminator
