@@ -4,8 +4,8 @@ mkdir -p ~/.fonts
 cp ~/repos/dotfiles/zsh/fonts/* ~/.fonts/
 fc-cache -f -v >> /dev/null
 
-echo "Installing zsh and updating .zshrc and .p10k.zsh"
-sudo apt-get install zsh
+echo "Installing zsh, plugins, and updating .zshrc and .p10k.zsh"
+sudo apt-get install zsh zsh-syntax-highlighting
 ln -sfn ~/repos/dotfiles/zsh/.zshrc ~/
 ln -sfn ~/repos/dotfiles/zsh/.p10k.zsh ~/
 
