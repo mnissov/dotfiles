@@ -55,6 +55,10 @@ zstyle ":completion:*" list-dirs-first true
 
 zstyle ':completion:*' squeeze-slashes true
 
+# auto add "/" to ".."
+## https://superuser.com/questions/277019/zsh-parent-directory-completion
+zstyle ":completion:*" special-dirs true
+
 # coloring suggestions
 eval "$(dircolors)"
 zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}
