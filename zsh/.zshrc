@@ -56,6 +56,6 @@ alias ls="ls --color=always --group-directories-first $@"
 if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-if lsb_release -is | grep -qi "Ubuntu" ; then
+if lsb_release -is | egrep -qi "Ubuntu|Pop" ; then
 	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
