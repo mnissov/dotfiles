@@ -27,7 +27,8 @@ compinit
 
 # ADDED BY USER
 # apply spell correction on commands
-setopt correctall
+# actually quite annoying
+#setopt correctall
 
 # autoload completion
 # -U ignore alises
