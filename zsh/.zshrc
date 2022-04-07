@@ -76,9 +76,6 @@ bindkey "^[[3~" delete-char
 # add coloring to ls
 alias ls="ls --color=always --group-directories-first $@"
 
-source /opt/ros/noetic/setup.zsh
-alias sourcenoetic="source ~/noetic_ws/install/setup.zsh"
-
 # PUT AT END
 if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
