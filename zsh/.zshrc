@@ -36,10 +36,29 @@ compinit
 autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 
+# COMPLETION SETTINGS #
+
+# completers
+## https://thevaluable.dev/zsh-completion-guide-examples/
+zstyle ':completion:*' completer _extensions _complete _approximate
+
 # Do menu-driven completion
-# menu select: enter select but does not execute command
+## menu select: enter select but does not execute command
 zstyle ":completion:*" menu select
-# `rehash true` sucks
+## `rehash true` sucks
+
+# grouping suggestions
+## https://bbs.archlinux.org/viewtopic.php?id=225303
+zstyle ":completion:*:matches" group 'yes'
+zstyle ":completion:*" group-name ''
+zstyle ":completion:*" list-dirs-first true
+
+zstyle ':completion:*' squeeze-slashes true
+
+# coloring suggestions
+eval "$(dircolors)"
+zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}
+
 
 ## BINDKEYS
 # allow shift tabbing
@@ -52,6 +71,9 @@ bindkey "^[[3~" delete-char
 ## ALIASES
 # add coloring to ls
 alias ls="ls --color=always --group-directories-first $@"
+
+source /opt/ros/noetic/setup.zsh
+alias sourcenoetic="source ~/noetic_ws/install/setup.zsh"
 
 # PUT AT END
 if lsb_release -is | grep -qi "EndeavourOS" ; then
