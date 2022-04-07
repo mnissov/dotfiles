@@ -11,7 +11,6 @@ fi
 if lsb_release -is | egrep -qi "Ubuntu|Pop" ; then
 	sudo apt-get install zsh zsh-syntax-highlighting
 fi
-sudo apt-get install zsh zsh-syntax-highlighting
 ln -sfn ~/repos/dotfiles/zsh/.zshrc ~/
 ln -sfn ~/repos/dotfiles/zsh/.p10k.zsh ~/
 
