@@ -1,3 +1,12 @@
 [submodule "vim/molokai"]
 	path = vim/molokai
-	url = https://github.com/tomasr/molokai
+	url = git@github.com:tomasr/molokai.git
+[submodule "zsh/powerlevel10k"]
+	path = zsh/powerlevel10k
+	url = git@github.com:romkatv/powerlevel10k.git
+[submodule "vim/vim-monokai-pro"]
+	path = vim/vim-monokai-pro
+	url = git@github.com:phanviet/vim-monokai-pro.git
+[submodule "vim/sonokai"]
+	path = vim/sonokai
+	url = https://github.com/sainnhe/sonokai

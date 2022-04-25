@@ -4,6 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+source ~/repos/dotfiles/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
@@ -21,18 +22,13 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-if lsb_release -is | grep -qi "EndeavourOS" ; then
-	source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-fi
-if lsb_release -is | grep -qi "Ubuntu" ; then
-	source ~/powerlevel10k/powerlevel10k.zsh-theme
-fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ADDED BY USER
 # apply spell correction on commands
-setopt correctall
+# actually quite annoying
+#setopt correctall
 
 # autoload completion
 # -U ignore alises
@@ -40,10 +36,33 @@ setopt correctall
 autoload -U compinit && compinit
 autoload -U bashcompinit && bashcompinit
 
+# COMPLETION SETTINGS #
+
+# completers
+## https://thevaluable.dev/zsh-completion-guide-examples/
+zstyle ':completion:*' completer _extensions _complete _approximate
+
 # Do menu-driven completion
-# menu select: enter select but does not execute command
+## menu select: enter select but does not execute command
 zstyle ":completion:*" menu select
-# `rehash true` sucks
+## `rehash true` sucks
+
+# grouping suggestions
+## https://bbs.archlinux.org/viewtopic.php?id=225303
+zstyle ":completion:*:matches" group 'yes'
+zstyle ":completion:*" group-name ''
+zstyle ":completion:*" list-dirs-first true
+
+zstyle ':completion:*' squeeze-slashes true
+
+# auto add "/" to ".."
+## https://superuser.com/questions/277019/zsh-parent-directory-completion
+zstyle ":completion:*" special-dirs true
+
+# coloring suggestions
+eval "$(dircolors)"
+zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}
+
 
 ## BINDKEYS
 # allow shift tabbing
@@ -61,6 +80,6 @@ alias ls="ls --color=always --group-directories-first $@"
 if lsb_release -is | grep -qi "EndeavourOS" ; then
 	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-if lsb_release -is | grep -qi "Ubuntu" ; then
+if lsb_release -is | egrep -qi "Ubuntu|Pop" ; then
 	source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
