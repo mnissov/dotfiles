@@ -12,7 +12,6 @@ set splitright
 set nowrap
 set colorcolumn=80
 
-
 " enable line numbers
 set nu
 " set default tab-size to 4
