@@ -40,7 +40,7 @@ autoload -U bashcompinit && bashcompinit
 
 # completers
 ## https://thevaluable.dev/zsh-completion-guide-examples/
-zstyle ':completion:*' completer _extensions _complete _approximate
+zstyle ':completion:*' completer _extensions _complete # _approximate
 
 # Do menu-driven completion
 ## menu select: enter select but does not execute command
