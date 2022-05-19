@@ -73,6 +73,13 @@ bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
 #bindkey "^[[3~" delete-char
 bindkey "${terminfo[kdch1]}" delete-char
+# https://superuser.com/questions/585003/searching-through-history-with-up-and-down-arrow-in-zsh
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "${terminfo[kcuu1]}" up-line-or-beginning-search	# Up
+bindkey "${terminfo[kcud1]}" down-line-or-beginning-search	# Down
 
 ## ALIASES
 # add coloring to ls
