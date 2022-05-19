@@ -1,6 +1,7 @@
 " VIM minimal setup
 " https://www.guckes.net/vim/setup.html
-set ai nocp digraph ek hid   ru sc vb wmnu   noeb noet nosol
+"" removed digraph - irritating behavior
+set ai nocp  ek hid   ru sc vb wmnu   noeb noet nosol
 set bs=2 fo=cqrt ls=2 shm=at tw=72 ww=<,>,h,l 
 set comments=b:#,:%,n:>
 set list listchars=tab:»·,trail:·
@@ -16,8 +17,6 @@ set colorcolumn=80
 set nu
 " set default tab-size to 4
 set tabstop=4
-" enable status line
-set ls=2
 " https://stackoverflow.com/questions/2287440/how-to-do-case-insensitive-search-in-vim
 set ignorecase
 set smartcase
