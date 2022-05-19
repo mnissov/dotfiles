@@ -63,14 +63,16 @@ zstyle ":completion:*" special-dirs true
 eval "$(dircolors)"
 zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}
 
-
 ## BINDKEYS
 # allow shift tabbing
 bindkey "^[[Z" reverse-menu-complete
 # home, end, and delete keys
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[3~" delete-char
+#bindkey "^[[H" beginning-of-line
+bindkey "${terminfo[khome]}" beginning-of-line
+#bindkey "^[[F" end-of-line
+bindkey "${terminfo[kend]}" end-of-line
+#bindkey "^[[3~" delete-char
+bindkey "${terminfo[kdch1]}" delete-char
 
 ## ALIASES
 # add coloring to ls
