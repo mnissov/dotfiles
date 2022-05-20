@@ -1,5 +1,5 @@
 [global_config]
-  focus = mouse
+  focus = system
   inactive_color_offset = 1.0
   always_split_with_profile = True
   title_use_system_font = False
