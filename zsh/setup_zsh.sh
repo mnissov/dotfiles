@@ -19,4 +19,4 @@ ln -sfn ~/repos/dotfiles/zsh/.zshrc ~/
 ln -sfn ~/repos/dotfiles/zsh/.p10k.zsh ~/.zsh/
 
 echo "Settings as default shell"
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
