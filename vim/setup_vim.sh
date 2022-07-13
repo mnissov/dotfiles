@@ -3,6 +3,7 @@ read -p "Do you want to install vim? [Y/n]: " answer
 ## Set the default value if no answer was given
 answer=${answer:Y}
 ## If the answer matches y or Y, install
+# TODO: fix `./vim/setup_vim.sh: 4: Bad substitution`
 if [[ $answer =~ [Yy] ]]
 then
 	if lsb_release -is | grep -qi "EndeavourOS"
