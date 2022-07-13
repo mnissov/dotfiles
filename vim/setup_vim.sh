@@ -1,9 +1,9 @@
 #!/bin/sh
 read -p "Do you want to install vim? [Y/n]: " answer
 ## Set the default value if no answer was given
-answer=${answer:Y}
+answer="${answer:-Y}"
 ## If the answer matches y or Y, install
-if [[ $answer =~ [Yy] ]]
+if [ "$answer" = "Y" ] || [ "$answer" = "y"];
 then
 	if lsb_release -is | grep -qi "EndeavourOS"
 	then
