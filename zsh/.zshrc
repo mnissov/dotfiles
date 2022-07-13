@@ -95,6 +95,18 @@ alias ll="ls -alF"
 alias la="ls -A"
 alias l="ls -CF"
 
+source /opt/ros/noetic/setup.zsh
+source /opt/ros/noetic/share/rosbash/roszsh
+source ~/workspaces/depends_ws/devel/setup.zsh
+source ~/workspaces/drivers_ws/devel/setup.zsh
+alias swd='source devel/setup.zsh'
+alias sourcenoetic='source ~/workspaces/noetic_ws/devel/setup.zsh'
+alias sourcehilti='source ~/workspaces/hilti_ws/devel/setup.zsh'
+alias sourcecalib='source ~/workspaces/calib_ws/devel/setup.zsh'
+alias sourcestick='source ~/workspaces/stick_ws/devel/setup.zsh'
+alias sourcedrivers='source ~/workspaces/drivers_ws/devel/setup.zsh'
+alias sourcedepends='source ~/workspaces/depends_ws/devel/setup.zsh'
+
 # PUT AT END
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 if lsb_release -is | grep -qi "EndeavourOS" ; then
