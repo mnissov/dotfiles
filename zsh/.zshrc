@@ -18,46 +18,53 @@ setopt beep nomatch notify
 unsetopt autocd extendedglob
 
 # The following lines were added by compinstall
-zstyle :compinstall filename "/home/morten/.zshrc"
+# zstyle :compinstall filename "/home/morten/.zshrc"
 
-autoload -Uz compinit
-compinit
+#autoload -Uz compinit
+#compinit
 # End of lines added by compinstall
-# autoload completion
-# -U ignore aliases
-# +X only load named function
-autoload -U compinit && compinit
-autoload -U bashcompinit && bashcompinit
 
+# ADDED BY USER
 # apply spell correction on commands
 # actually quite annoying
 #setopt correctall
 
+
 # COMPLETION SETTINGS #
 # completers
 ## https://thevaluable.dev/zsh-completion-guide-examples/
-zstyle ':completion:*' completer _extensions _complete # _approximate
-
+zstyle ':completion:*' completer _extensions _complete # _approximate _correct
+# -TAB tries to complete for options
+zstyle ':completion:*' complete-options true
 # Do menu-driven completion
 ## menu select: enter select but does not execute command
 zstyle ":completion:*" menu select
 ## `rehash true` sucks
-
 # grouping suggestions
 ## https://bbs.archlinux.org/viewtopic.php?id=225303
-zstyle ":completion:*:matches" group 'yes'
-zstyle ":completion:*" group-name ''
-zstyle ":completion:*" list-dirs-first true
-
+zstyle ':completion:*:matches' 	group 'yes'
+# group completions by type
+zstyle ':completion:*' 			group-name ''
+# list dirs first
+zstyle ":completion:*" 			list-dirs-first true
+# https://github.com/llua/homelab-states/blob/main/zsh/.zshrc#L259
+zstyle ':completion::complete:python3::*' list-dirs-first false
+#zstyle ':completion::complete:python<->#(.<->)#::*' list-dirs-first false # so python3.9 etc would work
+# expands // to /
 zstyle ':completion:*' squeeze-slashes true
-
 # auto add "/" to ".."
 ## https://superuser.com/questions/277019/zsh-parent-directory-completion
 zstyle ":completion:*" special-dirs true
-
 # coloring suggestions
 eval "$(dircolors)"
 zstyle ":completion:*" list-colors ${(s.:.)LS_COLORS}
+
+# autoload completion
+# -U ignore alises
+# +X only load named function
+autoload -U compinit && compinit
+autoload -U bashcompinit && bashcompinit
+
 
 ## BINDKEYS
 # vi vs emacs
